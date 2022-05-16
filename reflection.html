@@ -1,0 +1,127 @@
+<html lang="en"><head>
+    <meta charset="UTF-14">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style type="text/css">
+        
+#main {
+margin: 5%;
+}
+
+#text-container{
+margin-left: 55px;
+}
+
+#original{
+width: 500px;
+position: absolute;
+height: 190px;
+overflow-y: scroll;
+overflow-x: hidden;
+z-index: 3;
+}
+
+#reflection{
+margin-bottom: 0%;
+width: 500px;
+height: 190px;
+
+overflow-y: scroll;
+overflow-x: hidden;
+position: absolute;
+top: 395px;
+transform: rotateX(150deg);
+transform-style: preserv3d;
+
+opacity: 0.4;
+z-index: 1;
+-webkit-mask-image: linear-gradient(180deg, transparent 20px, black 120px);
+}
+
+#canvas{
+//border: 1px solid white;
+width: 800px;
+position: absolute;
+top: 240px;
+left: 0px;
+z-index: 2;
+}
+.main-text{
+
+}
+
+
+        .my-nav{
+            position: sticky;
+            z-index: 10;
+            top: 0;
+        }
+    </style>
+    <link rel="shortcut icon" href="#">
+    <title> Reflection </title>
+</head>
+
+<body>
+    <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse container-fluid" id="navbarNav"></div>
+        <ul class="navbar-nav">
+            
+            <li class="nav-item"><a class="nav-link " href="index.html">Index</a></li>
+                    <!-- href="/">Index</a> -->
+                
+            <li class="nav-item"><a class="nav-link " href="description.html">Description</a></li>
+                    <!-- href="/description">Description</a> -->
+                
+            <li class="nav-item"><a class="nav-link " href="steps.html">Steps</a></li>
+                    <!-- href="/steps">Steps</a> -->
+                
+            <li class="nav-item"><a class="nav-link " href="music.html">Music</a></li>
+                    <!-- href="/music">Music</a> -->
+                
+            <li class="nav-item"><a class="nav-link  active " href="reflection.html">Reflection</a></li>
+                    <!-- href="/reflection">Reflection</a> -->
+                
+            <li class="nav-item"><a class="nav-link " href="rubric.html">Rubric</a></li>
+                    <!-- href="/rubric">Rubric</a> -->
+                
+            <li class="nav-item"><a class="nav-link " href="professionals.html">Professionals</a></li>
+                    <!-- href="/professionals">Professionals</a> -->
+                
+        </ul>
+    </nav>
+    <div id="main">
+        
+<h1>Reflection</h1><br>
+<div id="text-container">
+   <div id="original" onscroll="document.querySelector('#reflection').scrollTo(0, this.scrollTop);updateRipple(this.scrollTop)">
+      <p>As I've mentioned before, my decision to pursue music was suprising, even to me. Most people know me for my
+         love of programming or my times on the track, so choosing to explore this artform seems to be a sign of
+         cognitive dissonance. However, I cannot express how happy I am with my choice. Having this creative outlet
+         has allowed me look at my thoughts in a new light; my ideas staying in plaintext in my head are not as
+         vibrant as they are on sheet music. I find myself also attatching myself to my pieces. While it may seem
+         crazy to most, I write my songs by personifying my instruments: the piano comes in to argue with the bass,
+         the strings are reflecting on their regrets, and the drums are frustrated with their circumstances.</p>
+   </div>
+   <canvas id="canvas"></canvas>
+   <div id="reflection">
+      <p>As I've mentioned before, my decision to pursue music was suprising, even to me. Most people know me for my
+         love of programming or my times on the track, so choosing to explore this artform seems to be a sign of
+         cognitive dissonance. However, I cannot express how happy I am with my choice. Having this creative outlet
+         has allowed me look at my thoughts in a new light; my ideas staying in plaintext in my head are not as
+         vibrant as they are on sheet music. I find myself also attatching myself to my pieces. While it may seem
+         crazy to most, I write my songs by personifying my instruments: the piano comes in to argue with the bass,
+         the strings are reflecting on their regrets, and the drums are frustrated with their circumstances.</p>
+   </div>
+</div>
+
+<script type="text/javascript" src="/static/scripts/reflection.js"></script>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+</body></html>
