@@ -9,7 +9,7 @@ window.onload = (event) => {
 function updateRipple(scroll) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.strokeStyle = "white";
-    delta = 40;
+    delta = 50;
     scale = 1.1;
     for (let index = 0; index < scroll; index += delta) {
         console.log(index);
