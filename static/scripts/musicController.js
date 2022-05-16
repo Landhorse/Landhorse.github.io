@@ -7,7 +7,7 @@ const mainPause = document.querySelector("#pause-button");
 const songTitle = document.querySelector("#song-title");
 const lyrics = document.querySelector("#lyrics");
 const lyricContainer = document.querySelector("#lyric-container");
-const songNames = ["May16", "Sep12", "BreakApart", "AllIAsk", "Nov17", "Jun25"]
+const songNames = ["May16", "Sep12", "BreakApart", "AllIAsk", "Nov17", "Jun25"];
 
 var started, audio, context, source, analyser, scrubberMouseDown, currentSong, lastVolume, volumeToggle;
 
