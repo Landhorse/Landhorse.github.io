@@ -17,23 +17,15 @@ margin-left: 55px;
 }
 
 #original{
-width: 500px;
-position: absolute;
-height: 190px;
-overflow-y: scroll;
-overflow-x: hidden;
+top: 30%;
 z-index: 3;
 }
 
 #reflection{
-margin-bottom: 0%;
-width: 500px;
-height: 190px;
 
-overflow-y: scroll;
-overflow-x: hidden;
-position: absolute;
-top: 395px;
+
+
+top: 57%;
 transform: rotateX(150deg);
 transform-style: preserv3d;
 
@@ -46,12 +38,18 @@ z-index: 1;
 //border: 1px solid white;
 width: 800px;
 position: absolute;
-top: 240px;
+top: 35%;
 left: 0px;
 z-index: 2;
 }
 .main-text{
-
+   overflow-y: scroll;
+   overflow-x: hidden;
+   position: absolute;
+   margin-bottom: 0%;
+width: 500px;
+height: 26%;  
+font-size: 20px; 
 }
 
 
@@ -65,7 +63,7 @@ z-index: 2;
     <title> Reflection </title>
 </head>
 
-<body>
+<body data-new-gr-c-s-check-loaded="14.1060.0" data-gr-ext-installed="">
     <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="collapse navbar-collapse container-fluid" id="navbarNav"></div>
         <ul class="navbar-nav">
@@ -97,7 +95,7 @@ z-index: 2;
         
 <h1>Reflection</h1><br>
 <div id="text-container">
-   <div id="original" onscroll="document.querySelector('#reflection').scrollTo(0, this.scrollTop);updateRipple(this.scrollTop)">
+   <div id="original" class="main-text" onscroll="document.querySelector('#reflection').scrollTo(0, this.scrollTop);updateRipple(this.scrollTop)">
       <p>As I've mentioned before, my decision to pursue music was suprising, even to me. Most people know me for my
          love of programming or my times on the track, so choosing to explore this artform seems to be a sign of
          cognitive dissonance. However, I cannot express how happy I am with my choice. Having this creative outlet
@@ -107,7 +105,7 @@ z-index: 2;
          the strings are reflecting on their regrets, and the drums are frustrated with their circumstances.</p>
    </div>
    <canvas id="canvas"></canvas>
-   <div id="reflection">
+   <div id="reflection" class="main-text">
       <p>As I've mentioned before, my decision to pursue music was suprising, even to me. Most people know me for my
          love of programming or my times on the track, so choosing to explore this artform seems to be a sign of
          cognitive dissonance. However, I cannot express how happy I am with my choice. Having this creative outlet
