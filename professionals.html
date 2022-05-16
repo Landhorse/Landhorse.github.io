@@ -1,13 +1,5 @@
-<html lang="en"><head>
-    <meta charset="UTF-14">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
-    <link rel="stylesheet" href="/static/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <style type="text/css">
-        
+{% extends "base.html" %}
+{% block style %}
 #main, #text-container{
 margin:5%
 }
@@ -26,31 +18,13 @@ transition: 0.6s;
 z-index: 1
 }
 
-
-.bubble:nth-child(1){
-left: 15%;
-top: 53%;
-animation: 6s bubble-y 1s infinite;
+{% for i in range(1, 5) %}
+.bubble:nth-child({{i}}){
+left: {{15 + 17 * (i-1)}}%;
+top: {{20 + (i * 23 % 40)}}%;
+animation: {{3*(i%2 + i)}}s bubble-y {{i}}s infinite;
 }
-
-.bubble:nth-child(2){
-left: 32%;
-top: 36%;
-animation: 6s bubble-y 2s infinite;
-}
-
-.bubble:nth-child(3){
-left: 49%;
-top: 59%;
-animation: 12s bubble-y 3s infinite;
-}
-
-.bubble:nth-child(4){
-left: 66%;
-top: 42%;
-animation: 12s bubble-y 4s infinite;
-}
-
+{% endfor %}
 
 @keyframes bubble-y{
 from{
@@ -78,16 +52,20 @@ transition: 0.6s;
 }
 
 .bubble:hover p{
-opacity: 1;
+    visibility:visible;
+height:auto;
 transition: 0.2s step-end;
+
 }
 
 
 
 .bubble p{
-opacity: 0;
+    visibility:hidden;
 padding-left: 1%;
 padding-right: 1%;
+height: 0px;
+
 }
 
 .bubble h2{
@@ -95,47 +73,9 @@ font-size: 15px;
 transition: 0.6s;
 padding-top: 30%;
 }
-
-        .my-nav{
-            position: sticky;
-            z-index: 10;
-            top: 0;
-        }
-    </style>
-    <link rel="shortcut icon" href="#">
-    <title> Professionals </title>
-</head>
-
-<body>
-    <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="collapse navbar-collapse container-fluid" id="navbarNav"></div>
-        <ul class="navbar-nav">
-            
-            <li class="nav-item"><a class="nav-link " href="index.html">Index</a></li>
-                    <!-- href="/">Index</a> -->
-                
-            <li class="nav-item"><a class="nav-link " href="description.html">Description</a></li>
-                    <!-- href="/description">Description</a> -->
-                
-            <li class="nav-item"><a class="nav-link " href="steps.html">Steps</a></li>
-                    <!-- href="/steps">Steps</a> -->
-                
-            <li class="nav-item"><a class="nav-link " href="music.html">Music</a></li>
-                    <!-- href="/music">Music</a> -->
-                
-            <li class="nav-item"><a class="nav-link " href="reflection.html">Reflection</a></li>
-                    <!-- href="/reflection">Reflection</a> -->
-                
-            <li class="nav-item"><a class="nav-link " href="rubric.html">Rubric</a></li>
-                    <!-- href="/rubric">Rubric</a> -->
-                
-            <li class="nav-item"><a class="nav-link  active " href="professionals.html">Professionals</a></li>
-                    <!-- href="/professionals">Professionals</a> -->
-                
-        </ul>
-    </nav>
-    <div id="main">
-        
+{% endblock %}
+{% block title %} Professionals {% endblock %}
+{% block body %}
 <h1>Professionals</h1>
 <div id="text-container">
     <div class="bubble">
@@ -157,9 +97,4 @@ padding-top: 30%;
     </div>
 </div>
 <script type="text/javascript" src="/static/scripts/professionals.js"></script>
-
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-
-</body></html>
+{% endblock %}
