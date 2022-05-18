@@ -1,17 +1,18 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-14">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico">
     <link rel="stylesheet" href="/static/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <style type="text/css">
         
 #main{
-margin: 5%;
-}
-#text-container{
 margin: 5%;
 }
 body{
@@ -24,7 +25,6 @@ h1{
 }
 .key{
 position: fixed;
-//border: 1px solid black;
 text-align: right;
 color: black;
 transition: 0.4s;
@@ -78,23 +78,23 @@ bottom: 74%;
 
 
 #black-keys>.key:nth-child(1) {
-bottom: 23.75%;
+bottom: 15.75%;
 }
 
 #black-keys>.key:nth-child(2) {
-bottom: 31.75%;
+bottom: 23.75%;
 }
 
 #black-keys>.key:nth-child(3) {
-bottom: 47.75%;
+bottom: 23.75%;
 }
 
 #black-keys>.key:nth-child(4) {
-bottom: 55.75%;
+bottom: 23.75%;
 }
 
 #black-keys>.key:nth-child(5) {
-bottom: 63.75%;
+bottom: 23.75%;
 }
 
 #white-keys .key:hover, #black-keys .key:hover{
@@ -109,93 +109,97 @@ bottom: 63.75%;
 
 #table{
 position: absolute;
-bottom: -21.5%;
-left: 35.33%;
-width: 60%;
-top: 21.2%;
-//height: 80%;
+bottom: 22.62%;
+left: 35.6vw;
+width: 60vw;
+top: 21.3%;
+height: 60.71%;
 }
 
-#top-row{
-background: black !important;
+#top-row i{
+    opacity: 0;
+    transition: 0.4s;
+}
+#top-row:hover i{
+    opacity: 1;
+    transition: 0.4s;
 }
 
-.row{
-position: fixed;
-overflow: clip;
-height: 5%;
-width: 60%;
-min-height: 5%;
+row{
+width: 60vw;
 transition: 0.4s;
 }
 
 
 .row:nth-child(1) {
-top:21.21%;
+top:21.34%;
 }
 
 .row:nth-child(2) {
-top:25.89%;
+top:26.01%;
 }
 
 .row:nth-child(3) {
-top:30.57%;
+top:30.68%;
 }
 
 .row:nth-child(4) {
-top:35.25%;
+top:35.35%;
 }
 
 .row:nth-child(5) {
-top:39.93%;
+top:40.02%;
 }
 
 .row:nth-child(6) {
-top:44.61%;
+top:44.69%;
 }
 
 .row:nth-child(7) {
-top:49.29%;
+top:49.36%;
 }
 
 .row:nth-child(8) {
-top:53.97%;
+top:54.03%;
 }
 
 .row:nth-child(9) {
-top:58.65%;
+top:58.7%;
 }
 
 .row:nth-child(10) {
-top:63.33%;
+top:63.37%;
 }
 
 .row:nth-child(11) {
-top:68.00999999999999%;
+top:68.04%;
 }
 
 .row:nth-child(12) {
-top:72.69%;
+top:72.71%;
 }
 
 .row:nth-child(13) {
-top:77.37%;
+top:77.38%;
 }
 
 
 .col{
-padding-top: 1%;
-padding-bottom: 1%;
-width: 33%;
+overflow: hidden;
+text-overflow: ellipsis;
+padding-top: 0.5%;
+padding-bottom: 0.5%;
+width: 20vw;
 text-align: center;
-//border: 1px solid gray;
 z-index: 2;
 transition: 0.4s;
+height: 4.67vh;
 }
 
 .col:hover{
 background: #303040;
 transition: 0.4s;
+height:auto;
 }
 
 .white-row{
@@ -203,11 +207,8 @@ background: #202020;
 }
 
 .white-row:hover{
-position: fixed;
 z-index: 3;
 height: auto;
-width: 60%;
-overflow: visible;
 }
 
 .toggle{
@@ -230,37 +231,16 @@ box-shadow: 0px 0px 20px #607090;
         <div class="collapse navbar-collapse container-fluid" id="navbarNav"></div>
         <ul class="navbar-nav">
             
-            <li class="nav-item"><a class="nav-link " href="index.html">Index</a></li>
-                    <!-- href="/">Index</a> -->
-                
-            <li class="nav-item"><a class="nav-link " href="description.html">Description</a></li>
-                    <!-- href="/description">Description</a> -->
-                
-            <li class="nav-item"><a class="nav-link " href="steps.html">Steps</a></li>
-                    <!-- href="/steps">Steps</a> -->
-                
-            <li class="nav-item"><a class="nav-link " href="music.html">Music</a></li>
-                    <!-- href="/music">Music</a> -->
-                
-            <li class="nav-item"><a class="nav-link " href="reflection.html">Reflection</a></li>
-                    <!-- href="/reflection">Reflection</a> -->
-                
-            <li class="nav-item"><a class="nav-link  active " href="rubric.html">Rubric</a></li>
-                    <!-- href="/rubric">Rubric</a> -->
-                
-            <li class="nav-item"><a class="nav-link " href="professionals.html">Professionals</a></li>
-                    <!-- href="/professionals">Professionals</a> -->
-                
         </ul>
     </nav>
     <div id="main">
         
 <h1>Rubric</h1>
 <div id="text-container">
-    <div id="keys">
+    <div id=keys>
         <div id="white-keys">
             <div class="key">Creativity</div>
-            <div class="key">Sdivucture</div>
+            <div class="key">Structure</div>
             <div class="key">Catchiness</div>
             <div class="key">Mixing</div>
             <div class="key">Emotional Impact</div>
@@ -277,9 +257,10 @@ box-shadow: 0px 0px 20px #607090;
     </div>
     <div id="table">
         <div id="top-row" class="row">
-            <div class="col">1-10 (1 is lowest, 10 is highest)</div>
-            <div class="col">What was most successful</div>
-            <div class="col">What needed improvement</div>
+            <div onclick="clearCols();" class="col">1-10 (1 is lowest, 10 is highest) <i class="bi bi-trash"></i></div>
+            <div onclick="playAll();" class="col">What was most successful <i
+                class="bi bi-play"></i></div>
+            <div class="col">What needed improvement<span><div>+</div></span></div>
         </div>
         <div class="row white-row">
             <div class="col">5</div>
@@ -287,7 +268,7 @@ box-shadow: 0px 0px 20px #607090;
             <div class="col">I could've used way more</div>
         </div>
         <div class="row">
-            <div class="col">&nbsp;</div>
+            <div class="col"></div>
             <div class="col"></div>
             <div class="col"></div>
         </div>
@@ -297,7 +278,7 @@ box-shadow: 0px 0px 20px #607090;
             <div class="col">I could've separated sections better</div>
         </div>
         <div class="row">
-            <div class="col">&nbsp;</div>
+            <div class="col"></div>
             <div class="col"></div>
             <div class="col"></div>
         </div>
@@ -307,7 +288,7 @@ box-shadow: 0px 0px 20px #607090;
             <div class="col">I could've had more range in the emotions I was going for</div>
         </div>
         <div class="row">
-            <div class="col">&nbsp;</div>
+            <div class="col"></div>
             <div class="col"></div>
             <div class="col"></div>
         </div>
@@ -323,7 +304,7 @@ box-shadow: 0px 0px 20px #607090;
             <div class="col">I could've utilized more formulas for catchy songs</div>
         </div>
         <div class="row">
-            <div class="col">&nbsp;</div>
+            <div class="col"></div>
             <div class="col"></div>
             <div class="col"></div>
         </div>
@@ -333,7 +314,7 @@ box-shadow: 0px 0px 20px #607090;
             <div class="col">There could've been more variation</div>
         </div>
         <div class="row">
-            <div class="col">&nbsp;</div>
+            <div class="col"></div>
             <div class="col"></div>
             <div class="col"></div>
         </div>
@@ -347,7 +328,9 @@ box-shadow: 0px 0px 20px #607090;
 <script type="text/javascript" src="/static/scripts/rubric.js"></script>
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
 
-
-</body></html>
+</html>
