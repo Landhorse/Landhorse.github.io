@@ -170,6 +170,10 @@ document.onkeydown = function(e) {
         updateVolume();
     }
 
+    if (e.key === " "){
+        pause();
+    }
+
 }
 
 function updateTime() {
