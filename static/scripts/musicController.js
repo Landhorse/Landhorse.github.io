@@ -166,11 +166,9 @@ document.onkeydown = function (e) {
         volumeScrubber.value = Number(volumeScrubber.value) - 0.1;
         updateVolume();
     }
-
     if (e.key === " ") {
         pause();
     }
-
 }
 
 function updateTime() {

@@ -16,7 +16,7 @@ function updateRipple(scroll) {
         console.log(index);
         ctx.strokeStyle = `rgba(0, 150, 150, ` + (75 - scroll + index) / 75 + `)`;
         ctx.beginPath();
-        ctx.ellipse((canvas.width + 5)/2, (canvas.height)/2, (100 + scroll - index) / scale, (scroll - index) / (4 * scale), 0, 0, 2 * Math.PI);
+        ctx.ellipse((canvas.width + 5)/2, (canvas.height + 10)/2, (100 + scroll - index) / scale, (scroll - index) / (4 * scale), 0, 0, 2 * Math.PI);
         ctx.stroke();
 
     }
