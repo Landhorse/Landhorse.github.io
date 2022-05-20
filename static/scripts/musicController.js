@@ -12,7 +12,33 @@ const songNames = ["May16", "Sep12", "BreakApart", "AllIAsk", "Nov17", "Jun25"];
 var started, audio, context, source, analyser, scrubberMouseDown, currentSong, lastVolume, volumeToggle;
 
 
-window.onload = (event) => {
+window.onload =  function (event) {
+    for (let index = 0; index < songNames.length; index++) {
+        const element = songNames[index];
+        document.querySelector("#accordion").innerHTML += `<div class="tracklist-item accordion-item list-group-item">
+        <h2 class="accordion-header song-name-container" id="heading${element}">
+            <button class="btn song-name song-name-hidden" name="${element}" data-num=${index}
+                onclick="singlePlay(Number(this.dataset.num))">
+                <i class="bi bi-play"></i>
+            </button>
+            <button class="btn song-name" name="${element}" data-num=${index}
+                onclick="selectSong(Number(this.dataset.num));">
+                ${element}
+            </button>
+            <button class="btn song-name song-name-hidden" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapse${element}"> <i class="bi bi-three-dots-vertical"></i>
+            </button>
+        </h2>
+        <div id="collapse${element}" class="accordion-collapse collapse" aria-labelledby="heading${element}"
+            data-bs-parent="#accordion">
+            <div class="accordion-body download-link-container">
+                <a href="/static/music/${element}/${element}.mp3"><button type="button"
+                        class="btn btn-link">Audio</button></a>
+                <a><button type="button" class="btn btn-link disabled" disabled>Logic</button></a>
+            </div>
+        </div>
+    </div>`;
+    }
     started = false;
     lastVolume = 1;
     volumeToggle = true;
@@ -36,6 +62,7 @@ function start() {
 }
 
 function selectSong(song) {
+    console.log(song);
     if (!started) {
         start();
         started = true;
@@ -70,40 +97,10 @@ function selectSong(song) {
     }
 
     songTitle.innerHTML = songNames[song];
-    fetch("/static/music/" + songNames[song] + "/lyrics.html")
-        .then(response => response.body)
-        .then(rb => {
-            const reader = rb.getReader();
 
-            return new ReadableStream({
-                start(controller) {
-                    // The following function handles each data chunk
-                    function push() {
-                        // "done" is a Boolean and value a "Uint8Array"
-                        reader.read().then(({ done, value }) => {
-                            // If there is no more data to read
-                            if (done) {
-                                // console.log('done', done);
-                                controller.close();
-                                return;
-                            }
-                            // Get the data and send it to the browser via the controller
-                            controller.enqueue(value);
-                            // Check chunks by logging to the console
-                            // console.log(done, value);
-                            push();
-                        })
-                    }
-
-                    push();
-                }
-            });
-        })
-        .then(stream => {
-            // Respond with our stream
-            return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
-        })
-        .then(result => {
+    myFetch(
+        "/static/music/" + songNames[song] + "/lyrics.html",
+        result => {
             // Do things with result
             lyrics.innerHTML = result;
         });
@@ -154,23 +151,23 @@ function forward() {
     pause();
 }
 
-document.onkeydown = function(e) {
+document.onkeydown = function (e) {
     if (audio !== undefined) {
-        if (e.key === "ArrowLeft"){
+        if (e.key === "ArrowLeft") {
             audio.currentTime -= 5;
-        } else if (e.key === "ArrowRight"){
+        } else if (e.key === "ArrowRight") {
             audio.currentTime += 5;
         }
     }
-    if (e.key === "ArrowUp"){
+    if (e.key === "ArrowUp") {
         volumeScrubber.value = Number(volumeScrubber.value) + 0.1;
         updateVolume();
-    } else if (e.key === "ArrowDown"){
+    } else if (e.key === "ArrowDown") {
         volumeScrubber.value = Number(volumeScrubber.value) - 0.1;
         updateVolume();
     }
 
-    if (e.key === " "){
+    if (e.key === " ") {
         pause();
     }
 
@@ -255,4 +252,41 @@ function formatTime(seconds) {
     seconds = Math.floor(seconds % 60);
     seconds = (seconds >= 10) ? seconds : "0" + seconds;
     return minutes + ":" + seconds;
+}
+
+function myFetch(path, result) {
+    fetch(path)
+        .then(response => response.body)
+        .then(rb => {
+            const reader = rb.getReader();
+
+            return new ReadableStream({
+                start(controller) {
+                    // The following function handles each data chunk
+                    function push() {
+                        // "done" is a Boolean and value a "Uint8Array"
+                        reader.read().then(({ done, value }) => {
+                            // If there is no more data to read
+                            if (done) {
+                                // console.log('done', done);
+                                controller.close();
+                                return;
+                            }
+                            // Get the data and send it to the browser via the controller
+                            controller.enqueue(value);
+                            // Check chunks by logging to the console
+                            // console.log(done, value);
+                            push();
+                        })
+                    }
+
+                    push();
+                }
+            });
+        })
+        .then(stream => {
+            // Respond with our stream
+            return new Response(stream, { headers: { "Content-Type": "text/html" } }).text();
+        })
+        .then(result);
 }
