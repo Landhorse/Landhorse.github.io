@@ -93,15 +93,27 @@ document.onkeydown = async function (e) {
     if (e.key === " ") {
         playAll();
     } else if (e.key === "Backspace") {
-        clear();
+        clearCols();
     } else if (e.key === "=") {
         addCol();
     } else if (e.key === "-") {
         remCol();
     } else if (keyboard.includes(e.key)){
         keys[keyboard.indexOf(e.key)].onclick();
+    } else if (e.key === "Shift") {
+        document.querySelector("#add-button").classList = ["bi bi-dash"];
+        document.querySelector("#add-button").onclick = remCol;
+    }
+    //console.log(e.key);
+}
+
+document.onkeyup = function(e) {
+    if (e.key === "Shift") {
+        document.querySelector("#add-button").classList = ["bi bi-plus"];
+        document.querySelector("#add-button").onclick = addCol;
     }
 }
+
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));

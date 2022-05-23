@@ -12,7 +12,7 @@ const songNames = ["May16", "Sep12", "BreakApart", "AllIAsk", "Nov17", "Jun25"];
 var started, audio, context, source, analyser, scrubberMouseDown, currentSong, lastVolume, volumeToggle;
 
 
-window.onload =  function (event) {
+window.onload = function (event) {
     for (let index = 0; index < songNames.length; index++) {
         const element = songNames[index];
         document.querySelector("#accordion").innerHTML += `<div class="tracklist-item accordion-item list-group-item">

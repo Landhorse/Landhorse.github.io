@@ -12,74 +12,259 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <style type="text/css">
         
-#main {
-    margin:5%;
+#secret {
+position: fixed;
+right: 10%;
+top:25%;
+width: 60%;
+height: 100%;
+z-index: 2;
+color: black;
+}
+
+#light {
+position: absolute;
+width: 200px;
+height: 200px;
+background: radial-gradient(white, transparent 70%);
+z-index: -1;
+}
+
+#hint {
+position: absolute;
+bottom: 0;
+right: 0;
+transform: rotateZ(180deg);
+}
+
+#sub-nav{
+position: fixed;
+text-align: right;
+z-index: 10;
+height: 50px;
+/* background: #212529; */
+width: 60%;
+padding: 1%;
+}
+#sub-nav>span{
+padding-right: 1%;
+cursor: pointer;
+}
+
+.section{
+position: fixed;
+}
+.hide {
+visibility: hidden;
+}
+.indent{
+padding: 5%;
+}
+.words{
+width: 700px;
+}
+th, td{
+border: 1px solid black;
+width: 100px;
 }
 
 
-        .my-nav {
-            position: sticky;
-            z-index: 10;
-            top: 0;
-        }
     </style>
     <link rel="shortcut icon" href="#">
     <title> Index </title>
 </head>
 
 <body>
-    <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="my-nav">
+        
+        <a   class="active"  href="/index.html">Index</a>
+        
+        <a  href="/description.html">Description</a>
+        
+        <a  href="/steps.html">Steps</a>
+        
+        <a  href="/music.html">Music</a>
+        
+        <a  href="/reflection.html">Reflection</a>
+        
+        <a  href="/rubric.html">Rubric</a>
+        
+        <a  href="/professionals.html">Professionals</a>
+        
+    </nav>
+    <!-- <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="collapse navbar-collapse container-fluid" id="navbarNav"></div>
         <ul class="navbar-nav">
             
             <li class="nav-item"><a
                     class="nav-link  active "
                     href="index.html">Index</a></li>
-            <!-- href="/">Index</a> -->
+            href="/">Index</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="description.html">Description</a></li>
-            <!-- href="/description">Description</a> -->
+            href="/description">Description</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="steps.html">Steps</a></li>
-            <!-- href="/steps">Steps</a> -->
+            href="/steps">Steps</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="music.html">Music</a></li>
-            <!-- href="/music">Music</a> -->
+            href="/music">Music</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="reflection.html">Reflection</a></li>
-            <!-- href="/reflection">Reflection</a> -->
+            href="/reflection">Reflection</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="rubric.html">Rubric</a></li>
-            <!-- href="/rubric">Rubric</a> -->
+            href="/rubric">Rubric</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="professionals.html">Professionals</a></li>
-            <!-- href="/professionals">Professionals</a> -->
+            href="/professionals">Professionals</a>
             
         </ul>
-    </nav>
+    </nav> -->
+
     <div id="main">
         
+
 <h1>Badge for Music Production</h1>
 <div id="text-container">
     <h3>Ethan Kahn</h3>
 </div>
+<div id="secret" class="hide">
+    <nav id="sub-nav">
+        <span onclick="show(this.innerHTML);">Index</span>
+        <span onclick="show(this.innerHTML);">Description</span>
+        <span onclick="show(this.innerHTML);">Steps</span>
+        <span onclick="show(this.innerHTML);">Product</span>
+        <span onclick="show(this.innerHTML);">Reflection</span>
+        <span onclick="show(this.innerHTML);">Rubric</span>
+        <span onclick="show(this.innerHTML);">Professionals</span>
+    </nav>
+    <div id="index" class="section indent">
+        <h2>Badge for Website Design</h2>
+        <div class="indent">
+            <h3>Ethan Kahn</h3>
+        </div>
+    </div>
+    <div id="description" class="section indent hide">
+        <h2>Description</h2>
+        <div class="words indent">
+            <p>For my Music Production Badge, I began developing a website to present my work. However, once I heard how
+                many presentations the judges had to go through, I decided to spice mine up and add some interesting
+                features. What came of it was an elaborate website filled with fun, interactable ways of presenting
+                information.
+            </p>
+        </div>
+    </div>
+    <div id="steps" class="section indent hide">
+        <h2>Steps</h2>
+        <div class="words indent">
+            <p>For each page, I followed specific steps to get to the page I wanted</p>
+            <ol>
+                <li>I start with choosing an interesting idea for a webpage. This usually comes just from me, but
+                    occasionally I look things up for inspiration.</li>
+                <li>I then begin creating a shell of a page using HTML. A minimal amount of written content goes into
+                    this part: that comes later.</li>
+                <li>Next, I start stylizing using CSS.</li>
+                <li>After that, I add in whatever functionality via JavaScript.</li>
+                <li>Finally, I add the actual written content to the page.</li>
+            </ol>
+        </div>
+    </div>
+    <div id="product" class="section indent hide">
+        <h2>Product</h2>
+        <div class="words indent">
+            You're looking at it
+        </div>
+    </div>
+    <div id="reflection" class="section indent hide">
+        <h2>Reflection</h2>
+        <div class="words indent">
+            <p>
+                In complete honest, I've had a snobby look at web developement for a long time. It's definitely an artsy
+                part of the coding world, so my algorithmic centric mind would look down at web developers. However,
+                this experience has opened my eyes to how difficult it can be to create a website. I hope to coninue
+                developing websites in the future.
+            </p>
+        </div>
+    </div>
+    <div id="rubric" class="section indent hide">
+        <h2>Rubric</h2>
+        <div class="words indent">
+            <table>
+                <tr>
+                    <td>&nbsp;</td>
+                    <th>Creativity</th>
+                    <th>Visuals</th>
+                    <th>Functionality</th>
+                    <th>Code Efficiency</th>
+                    <th>Generative Functionality</th>
+                    <th>Optimization</th>
+                </tr>
+                <tr>
+                    <th>1-10</th>
+                    <td>9</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <th>Most Successful</th>
+                    <td>I feel like each idea is very unique</td>
+                    <td>The minimal design came out well</td>
+                    <td>Everything feels smooth and intuitive</td>
+                    <td>The code is fast and well written</td>
+                    <td>Much of the code generates itself</td>
+                    <td>There isn't much redundant code</td>
+                </tr>
+                <tr>
+                    <th>Need Improvement</th>
+                    <td>I could've went even farther to come up with new features</td>
+                    <td>Completely outting BootStrap would made it stand more on its own</td>
+                    <td>More things could've been interactable</td>
+                    <td>The code has some looping issues</td>
+                    <td>The generative code can be hard to read</td>
+                    <td>Some more constants could've been used in the code</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="professionals" class="section indent hide">
+        <h2>Professionals</h2>
+        <div class="words indent">
+            <p>
+                I've mostly been self-taught, but I've gotten a lot of help from Brad Sparks. He's the school's
+                programming teacher and a web developer outside of school. He's been a great resource for help and an
+                excellent provider of feedback.
+            </p>
+        </div>
+    </div>
+</div>
+<div id="light" class="hide"></div>
+<div id="hint">
+    Press '/'
+</div>
+
+<script type="text/javascript" src="/static/scripts/index.js"></script>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/scripts/main.js"></script>
 </body>
 
 </html>

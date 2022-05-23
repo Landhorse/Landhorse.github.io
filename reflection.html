@@ -12,106 +12,114 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <style type="text/css">
         
-#main {
-   margin: 5%;
-   }
-   
-   #text-container{
-   margin-right: 5%;
-   text-align:right;
-   }
-   
-   #original{
-   top: 180px;
-   z-index: 3;
-   }
-   
-   #reflection{
-   top: 340px;
-   transform: rotateX(150deg);
-   transform-style: preserv3d;
-   
-   opacity: 0.4;
-   z-index: 1;
-   -webkit-mask-image: linear-gradient(180deg, transparent 20px, black 120px);
-   }
-   
-   #canvas{
-   //border: 1px solid white;
-   width: 672px;
-   position: absolute;
-   top: 180px;
-   height: 320px;
-   right: 0px;
-   z-index: 2;
-   }
-   
-   .main-text{
-   //border: 1px solid white;
-   overflow-y: scroll;
-   overflow-x: hidden;
-   position: absolute;
-   margin: 0%;
-   width: 432px;
-   height: 170px;
-   right:120px;
-   font-size: 20px;
-   }
-   
+#text-container{
+margin-right: 5%;
+text-align:right;
+}
+
+#original{
+top: 180px;
+z-index: 3;
+}
+
+#reflection{
+top: 340px;
+transform: rotateX(150deg);
+transform-style: preserv3d;
+
+opacity: 0.4;
+z-index: 1;
+-webkit-mask-image: linear-gradient(180deg, transparent 20px, black 120px);
+}
+
+#canvas{
+//border: 1px solid white;
+width: 672px;
+position: absolute;
+top: 180px;
+height: 320px;
+right: 0px;
+z-index: 2;
+}
+
+.main-text{
+//border: 1px solid white;
+overflow-y: scroll;
+overflow-x: hidden;
+position: absolute;
+margin: 0%;
+width: 432px;
+height: 170px;
+right:120px;
+font-size: 20px;
+}
 
 
-        .my-nav {
-            position: sticky;
-            z-index: 10;
-            top: 0;
-        }
     </style>
     <link rel="shortcut icon" href="#">
     <title> Reflection </title>
 </head>
 
 <body>
-    <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="my-nav">
+        
+        <a  href="/index.html">Index</a>
+        
+        <a  href="/description.html">Description</a>
+        
+        <a  href="/steps.html">Steps</a>
+        
+        <a  href="/music.html">Music</a>
+        
+        <a   class="active"  href="/reflection.html">Reflection</a>
+        
+        <a  href="/rubric.html">Rubric</a>
+        
+        <a  href="/professionals.html">Professionals</a>
+        
+    </nav>
+    <!-- <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="collapse navbar-collapse container-fluid" id="navbarNav"></div>
         <ul class="navbar-nav">
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="index.html">Index</a></li>
-            <!-- href="/">Index</a> -->
+            href="/">Index</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="description.html">Description</a></li>
-            <!-- href="/description">Description</a> -->
+            href="/description">Description</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="steps.html">Steps</a></li>
-            <!-- href="/steps">Steps</a> -->
+            href="/steps">Steps</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="music.html">Music</a></li>
-            <!-- href="/music">Music</a> -->
+            href="/music">Music</a>
             
             <li class="nav-item"><a
                     class="nav-link  active "
                     href="reflection.html">Reflection</a></li>
-            <!-- href="/reflection">Reflection</a> -->
+            href="/reflection">Reflection</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="rubric.html">Rubric</a></li>
-            <!-- href="/rubric">Rubric</a> -->
+            href="/rubric">Rubric</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="professionals.html">Professionals</a></li>
-            <!-- href="/professionals">Professionals</a> -->
+            href="/professionals">Professionals</a>
             
         </ul>
-    </nav>
+    </nav> -->
+
     <div id="main">
         
 <h1>Reflection</h1><br>
@@ -144,6 +152,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/scripts/main.js"></script>
 </body>
 
 </html>

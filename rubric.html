@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <style type="text/css">
         
-#main{
-margin: 5%;
-}
 body{
 height: 100vh;
 }
@@ -32,7 +29,7 @@ color: black;
 transition: 0.4s;
 }
 
-#white-keys .key{
+#white-keys>.key{
 height: 8%;
 width: 25%;
 background: white;
@@ -40,7 +37,7 @@ padding-top: 1%;
 padding-right: 1%;
 }
 
-#black-keys .key{
+#black-keys>.key{
 height: 4%;
 width: 12.5%;
 background: black;
@@ -110,7 +107,7 @@ bottom: 63.75%;
 }
 
 
-#white-keys .key:hover, #black-keys .key:hover{
+#white-keys>.key:hover, #black-keys>.key:hover{
 background: lightgray;
 transition: 0.4s;
 }
@@ -129,11 +126,15 @@ top: 21.3%;
 height: 60.71%;
 }
 
-#top-row i{
+
+
+#top-row>.col>i{
+padding: 2%;
+border-radius: 20%;
 opacity: 0;
 transition: 0.4s;
 }
-#top-row:hover i{
+#top-row:hover>.col>i{
 opacity: 1;
 transition: 0.4s;
 }
@@ -204,13 +205,12 @@ padding-top: 0.5%;
 padding-bottom: 0.5%;
 width: 20vw;
 text-align: center;
-//border: 1px solid gray;
 z-index: 2;
 transition: 0.4s;
 height: 4.67vh;
 }
 
-.col:hover{
+:not(#top-row)>.col:hover, #top-row>.col>i:hover{
 background: #303040;
 transition: 0.4s;
 height:auto;
@@ -230,59 +230,71 @@ background: #607090;
 box-shadow: 0px 0px 20px #607090;
 }
 
-
-        .my-nav {
-            position: sticky;
-            z-index: 10;
-            top: 0;
-        }
     </style>
     <link rel="shortcut icon" href="#">
     <title> Rubric </title>
 </head>
 
 <body>
-    <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="my-nav">
+        
+        <a  href="/index.html">Index</a>
+        
+        <a  href="/description.html">Description</a>
+        
+        <a  href="/steps.html">Steps</a>
+        
+        <a  href="/music.html">Music</a>
+        
+        <a  href="/reflection.html">Reflection</a>
+        
+        <a   class="active"  href="/rubric.html">Rubric</a>
+        
+        <a  href="/professionals.html">Professionals</a>
+        
+    </nav>
+    <!-- <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="collapse navbar-collapse container-fluid" id="navbarNav"></div>
         <ul class="navbar-nav">
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="index.html">Index</a></li>
-            <!-- href="/">Index</a> -->
+            href="/">Index</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="description.html">Description</a></li>
-            <!-- href="/description">Description</a> -->
+            href="/description">Description</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="steps.html">Steps</a></li>
-            <!-- href="/steps">Steps</a> -->
+            href="/steps">Steps</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="music.html">Music</a></li>
-            <!-- href="/music">Music</a> -->
+            href="/music">Music</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="reflection.html">Reflection</a></li>
-            <!-- href="/reflection">Reflection</a> -->
+            href="/reflection">Reflection</a>
             
             <li class="nav-item"><a
                     class="nav-link  active "
                     href="rubric.html">Rubric</a></li>
-            <!-- href="/rubric">Rubric</a> -->
+            href="/rubric">Rubric</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="professionals.html">Professionals</a></li>
-            <!-- href="/professionals">Professionals</a> -->
+            href="/professionals">Professionals</a>
             
         </ul>
-    </nav>
+    </nav> -->
+
     <div id="main">
         
 <h1>Rubric</h1>
@@ -298,18 +310,27 @@ box-shadow: 0px 0px 20px #607090;
             <div class="key">Sample Usage</div>
         </div>
         <div id="black-keys">
-            <div class="key">&nbsp;</div>
-            <div class="key">&nbsp;</div>
-            <div class="key">&nbsp;</div>
-            <div class="key">&nbsp;</div>
-            <div class="key">&nbsp;</div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
+            <div class="key"></div>
         </div>
     </div>
     <div id="table">
         <div id="top-row" class="row">
-            <div onclick="clearCols();" class="col">1-10 (1 is lowest, 10 is highest) <i class="bi bi-trash"></i></div>
-            <div onclick="playAll();" class="col">What was most successful <i class="bi bi-play"></i></div>
-            <div class="col">What needed improvement</div>
+            <div class="col">
+                <i onclick="clearCols();" class="bi bi-trash"></i>
+                1-10 (1 is lowest, 10 is highest) 
+            </div>
+            <div  class="col">
+                <i onclick="playAll();"class="bi bi-play"></i>
+                What was most successful 
+            </div>
+            <div class="col">
+                <i id="add-button" onclick="addCol();"class="bi bi-plus"></i>
+                What needed improvement
+            </div>
         </div>
         <div class="row white-row">
             <div class="col">5</div>
@@ -380,6 +401,7 @@ box-shadow: 0px 0px 20px #607090;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/scripts/main.js"></script>
 </body>
 
 </html>

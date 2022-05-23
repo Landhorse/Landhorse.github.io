@@ -12,8 +12,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <style type="text/css">
         
+#main {
+padding: 0%;
+}
 
 #top-of-page {
+position: absolute;
+top: 50px;
 width: 100%;
 }
 
@@ -258,59 +263,71 @@ color: #bf9000
 color: #4a86e8
 }
 
-
-        .my-nav {
-            position: sticky;
-            z-index: 10;
-            top: 0;
-        }
     </style>
     <link rel="shortcut icon" href="#">
     <title> Music </title>
 </head>
 
 <body>
-    <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="my-nav">
+        
+        <a  href="/index.html">Index</a>
+        
+        <a  href="/description.html">Description</a>
+        
+        <a  href="/steps.html">Steps</a>
+        
+        <a   class="active"  href="/music.html">Music</a>
+        
+        <a  href="/reflection.html">Reflection</a>
+        
+        <a  href="/rubric.html">Rubric</a>
+        
+        <a  href="/professionals.html">Professionals</a>
+        
+    </nav>
+    <!-- <nav class="my-nav navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="collapse navbar-collapse container-fluid" id="navbarNav"></div>
         <ul class="navbar-nav">
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="index.html">Index</a></li>
-            <!-- href="/">Index</a> -->
+            href="/">Index</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="description.html">Description</a></li>
-            <!-- href="/description">Description</a> -->
+            href="/description">Description</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="steps.html">Steps</a></li>
-            <!-- href="/steps">Steps</a> -->
+            href="/steps">Steps</a>
             
             <li class="nav-item"><a
                     class="nav-link  active "
                     href="music.html">Music</a></li>
-            <!-- href="/music">Music</a> -->
+            href="/music">Music</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="reflection.html">Reflection</a></li>
-            <!-- href="/reflection">Reflection</a> -->
+            href="/reflection">Reflection</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="rubric.html">Rubric</a></li>
-            <!-- href="/rubric">Rubric</a> -->
+            href="/rubric">Rubric</a>
             
             <li class="nav-item"><a
                     class="nav-link "
                     href="professionals.html">Professionals</a></li>
-            <!-- href="/professionals">Professionals</a> -->
+            href="/professionals">Professionals</a>
             
         </ul>
-    </nav>
+    </nav> -->
+
     <div id="main">
         
 <div id="top-of-page">
@@ -340,7 +357,7 @@ color: #4a86e8
         </div>
     </div>
 </div>
-<footer class="navbar-dark bg-dark" id="controlbar">
+<footer id="controlbar">
     <span id="main-buttons">
         <span id="current-time"></span>
         <button onclick="backward();" class="btn btn-outline-light round-button"><i
@@ -368,6 +385,7 @@ color: #4a86e8
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/static/scripts/main.js"></script>
 </body>
 
 </html>
