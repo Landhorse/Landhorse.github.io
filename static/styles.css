@@ -4,10 +4,46 @@
 
 body {
     background-color: black !important;
+    /* -webkit-mask-image: radial-gradient(transparent, white) !important; */
+}
+
+#my-nav {
+    position: fixed;
+    z-index: 10;
+    top:0;
+    height: 50px;
+    /* background: #212529; */
+    width: 100%;
+    padding: 1%;
+    text-align: right;
+}
+
+#my-nav>a {
+    text-decoration: none;
+    color: rgb(170, 170, 170);
+    padding: 0.25%;
+    transition: 0.4s;
+}
+
+#my-nav>a:hover{
+    color: rgb(230, 230, 230);
+    transition: 0.4s;
+}
+
+#my-nav>.active{
+    color: rgb(250, 250, 250);
 }
 
 #text-container {
     margin: 5%;
+}
+
+#main{
+    height:100vh;
+    width: 100vw;
+    background-color: black !important;
+    padding: 5%;
+    position: fixed;
 }
 
 ::-webkit-scrollbar {
